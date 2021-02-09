@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<medicines xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns="http://www.example.com/medicine"
+           xsi:noNamespaceSchemaLocation="Medicine.xsd">
+    <medicine>
+        <id>1</id>
+        <name>Claritine</name>
+        <group>ANTIHISTAMINE</group>
+        <analogs>Loratadin</analogs>
+        <analogs>Klaridol</analogs>
+        <versions>
+            <versionType>PILLS</versionType>
+            <pharms>
+                <pharm>
+                    <id>1</id>
+                    <certificate>
+                        <id>1</id>
+                        <number>255</number>
+                        <atRegistration>2015-08-09</atRegistration>
+                        <atFinish>2025-08-09</atFinish>
+                        <registrationOrganization>OOO GYM</registrationOrganization>
+                    </certificate>
+                    <aPackage>
+                        <id>1</id>
+                        <typePackages>BOX</typePackages>
+                        <amount>10</amount>
+                        <price>15</price>
+                    </aPackage>
+                    <dosage>
+                        <id>1</id>
+                        <dosageNum>1</dosageNum>
+                        <day>5</day>
+                    </dosage>
+                </pharm>
+            </pharms>
+        </versions>
+    </medicine>
+</medicines>

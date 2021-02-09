@@ -2,7 +2,7 @@ package com.epam.golubeva.xml.entity;
 
 import java.time.LocalDate;
 
-public class Certificate {
+public class Certificate extends AbstractBaseEntity {
     private Long number;
     private LocalDate atRegistration;
     private LocalDate atFinish;

@@ -2,21 +2,21 @@ package com.epam.golubeva.xml.entity;
 
 import java.util.List;
 
-public class Medicine {
+public class Medicines extends AbstractBaseEntity {
     private String name;
     private Pharm pharm;
     private Group group;
-    private List<Analog> analogs;
+    private String analogs;
     private List<Version> versions;
 
-    public Medicine(String name, Pharm pharm, Group group, List<Analog> analogs, List<Version> versions) {
+    public Medicines(String name, Pharm pharm, Group group, String analogs, List<Version> versions) {
         this.name = name;
         this.pharm = pharm;
         this.group = group;
         this.analogs = analogs;
         this.versions = versions;
     }
-    public Medicine(){
+    public Medicines(){
 
     }
 
@@ -44,11 +44,11 @@ public class Medicine {
         this.group = group;
     }
 
-    public List<Analog> getAnalogs() {
+    public String getAnalogs() {
         return analogs;
     }
 
-    public void setAnalogs(List<Analog> analogs) {
+    public void setAnalogs(String analogs) {
         this.analogs = analogs;
     }
 

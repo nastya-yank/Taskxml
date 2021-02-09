@@ -1,6 +1,6 @@
 package com.epam.golubeva.xml.entity;
 
-public class Package {
+public class Package extends AbstractBaseEntity {
     private TypePackage typePackage;
     private int amount;
     private double price;

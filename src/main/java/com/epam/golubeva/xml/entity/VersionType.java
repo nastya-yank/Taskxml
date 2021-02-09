@@ -4,5 +4,6 @@ public enum  VersionType {
     PILLS,
     CAPSULES,
     POWDER,
-    DROPS
+    DROPS,
+    SYRUP
 }

@@ -1,6 +1,6 @@
 package com.epam.golubeva.xml.entity;
 
-public abstract class Pharm {
+public class Pharm extends AbstractBaseEntity {
     private Certificate certificate;
     private Package aPackage;
     private Dosage dosage;

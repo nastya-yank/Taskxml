@@ -2,13 +2,13 @@ package com.epam.golubeva.xml.entity;
 
 import java.time.LocalTime;
 
-public class Dosage {
+public class Dosage extends AbstractBaseEntity {
     private short dosage;
-    private LocalTime time;
+    private short day;
 
-    public Dosage(short dosage, LocalTime time) {
+    public Dosage(short dosage, short day) {
         this.dosage = dosage;
-        this.time = time;
+        this.day = day;
     }
     public Dosage(){
 
@@ -22,11 +22,11 @@ public class Dosage {
         this.dosage = dosage;
     }
 
-    public LocalTime getTime() {
-        return time;
+    public short getDay() {
+        return day;
     }
 
-    public void setTime(LocalTime time) {
-        this.time = time;
+    public void setDay(short day) {
+        this.day = day;
     }
 }

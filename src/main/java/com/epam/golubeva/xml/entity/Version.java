@@ -2,7 +2,7 @@ package com.epam.golubeva.xml.entity;
 
 import java.util.List;
 
-public abstract class Version {
+public class Version extends AbstractBaseEntity {
     private VersionType versionType;
     private List<Pharm> pharms;
 

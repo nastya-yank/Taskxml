@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.example.com/medicine"
+        xmlns:tns="http://www.example.com/medicine"
+        elementFormDefault="qualified">
+
+    <simpleType name="groupType">
+        <restriction>
+            <enumeration value="ANTIBIOTIC"/>
+            <enumeration value="PAIN_RELIEVER"/>
+            <enumeration value="VITAMIN"/>
+            <enumeration value="ANTIDEPRESSANT"/>
+            <enumeration value="ANTIHISTAMINE"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="versionEnum">
+        <restriction>
+            <enumeration value="PILLS"/>
+            <enumeration value="CAPSULES"/>
+            <enumeration value="POWDER"/>
+            <enumeration value="DROPS"/>
+            <enumeration value="SYRUP"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="typePackage">
+        <restriction>
+            <enumeration value="BOX"/>
+            <enumeration value="JAR"/>
+            <enumeration value="BLISTER"/>
+            <enumeration value="TUBA"/>
+            <enumeration value="BOTTLE"/>
+        </restriction>
+    </simpleType>
+
+    <complexType name="versionTypes">
+        <sequence>
+            <element name="versionType" type="tns:versionEnum"/>
+            <element name="pharms" >
+                <complexType>
+                    <sequence minOccurs="1" maxOccurs="unbounded">
+                        <element name="pharm" type="tns:pharmType"/>
+                    </sequence>
+                </complexType>
+            </element>
+        </sequence>
+    </complexType>
+    <complexType name="pharmType">
+        <sequence>
+            <element name="id" type="int"/>
+            <element name="certificate">
+                <complexType>
+                    <sequence>
+                        <element name="id" type="int"/>
+                        <element name="number" type="long" minOccurs="1"/>
+                        <element name="atRegistration" type="date"/>
+                        <element name="atFinish" type="date"/>
+                        <element name="registrationOrganization" type="string"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="aPackage">
+                <complexType>
+                    <sequence>
+                        <element name="id" type="int"/>
+                        <element name="typePackages" type="tns:typePackage"/>
+                        <element name="amount" type="int"/>
+                        <element name="price" type="double"/>
+                    </sequence>
+                </complexType>
+            </element>
+
+            <element name="dosage">
+                <complexType>
+                    <sequence>
+                        <element name="id" type="int"/>
+                        <element name="dosageNum" type="short"/>
+                        <element name="day" type="short"/>
+                    </sequence>
+                </complexType>
+            </element>
+
+        </sequence>
+    </complexType>
+
+    <element name="medicines">
+        <complexType>
+            <sequence minOccurs="1" maxOccurs="unbounded">
+                <element name="medicine" >
+                    <complexType>
+                        <sequence>
+                            <element name="id" type="int"/>
+                            <element name="name" type="string"/>
+                            <element name="group" type="tns:groupType"/>
+                            <element name="analogs" type="string" minOccurs="1" maxOccurs="unbounded"/>
+                            <element name="versions" type="tns:versionTypes"/>
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+        </complexType>
+
+    </element>
+
+</schema>
